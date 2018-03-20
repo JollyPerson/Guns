@@ -19,10 +19,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static org.bukkit.event.block.Action.*;
 
@@ -31,7 +28,7 @@ public class Events implements Listener{
 
     public ItemStack CUSTOM_SNOWBALL = new ItemStack(Material.SNOW_BALL);
     private BlockPhysics blockPhysics;
-    private List<Player> firing = new ArrayList<>();
+    private List<UUID> bullets = new ArrayList<>();
 
     public Events(BlockPhysics blockPhysics) {
         this.blockPhysics = blockPhysics;
@@ -61,10 +58,16 @@ public class Events implements Listener{
             if (event.getPlayer().getItemInHand().isSimilar(new ItemStack(Material.SNOW_BALL))) {
                 Snowball snowball = event.getPlayer().launchProjectile(Snowball.class);
                 snowball.setVelocity(new Vector(1,1,1));
+                bullets.add(snowball.getUniqueId());
+                System.out.println(bullets);
                 snowball.getUniqueId();
-                System.out.println(firing);
             }
         }
+    }
+
+    @EventHandler
+    public void onSnowballHit(ProjectileHitEvent event){
+
     }
 
     @EventHandler
@@ -72,11 +75,11 @@ public class Events implements Listener{
         if (e.getEntity().getShooter() instanceof Player) {
             Player player = (Player) e.getEntity().getShooter();
             player.sendMessage("Hi");
-            if (firing.contains(player)) {
+            if (bullets.contains(e.getEntity().getUniqueId())) {
                 player.sendMessage("you are in the list");
                 e.getEntity().getWorld().createExplosion(e.getEntity().getLocation(), 3);
                 player.sendMessage(e.getEntity().getUniqueId().toString());
-                firing.remove(player);
+                bullets.remove(e.getEntity().getUniqueId());
             }
         }
     }
