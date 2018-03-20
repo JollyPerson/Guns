@@ -1,0 +1,5 @@
+name: Grenades
+main: me.JollyPerson.grenades.GrenadesMain
+version: 1.0
+author: JollyPerson
+commands:
