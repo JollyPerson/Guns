@@ -1,10 +1,8 @@
-package me.JollyPerson.grenades.events;
+package me.JollyPerson.guns.events;
 
-import me.JollyPerson.grenades.BlockPhysics;
-import me.JollyPerson.grenades.projectile.ProjectileSource;
+import me.JollyPerson.guns.BlockPhysics;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
-import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Snowball;
 import org.bukkit.entity.TNTPrimed;
@@ -18,7 +16,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 
-import java.awt.event.ActionEvent;
 import java.util.*;
 
 import static org.bukkit.event.block.Action.*;

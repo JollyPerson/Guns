@@ -1,4 +1,4 @@
-package me.JollyPerson.grenades;
+package me.JollyPerson.guns;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;

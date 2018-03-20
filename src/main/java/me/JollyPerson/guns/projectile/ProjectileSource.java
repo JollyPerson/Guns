@@ -1,4 +1,4 @@
-package me.JollyPerson.grenades.projectile;
+package me.JollyPerson.guns.projectile;
 
 public class ProjectileSource {
 

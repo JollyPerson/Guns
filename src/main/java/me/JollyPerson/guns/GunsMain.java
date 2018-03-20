@@ -1,6 +1,6 @@
-package me.JollyPerson.grenades;
+package me.JollyPerson.guns;
 
-import me.JollyPerson.grenades.events.Events;
+import me.JollyPerson.guns.events.Events;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
