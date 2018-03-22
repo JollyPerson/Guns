@@ -4,6 +4,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
@@ -14,8 +15,8 @@ import java.util.List;
 
 public class Ak47Events implements Listener {
 
-    public ItemStack Ak47 = new ItemStack(Material.WOOD_SWORD);
-    public ItemMeta Ak47Meta = Ak47.getItemMeta();
+    public ItemStack Ak47 = new ItemStack(Material.WOOD_HOE);
+    public ItemMeta Ak47Meta =  Ak47.getItemMeta();
 
     public Ak47Events(){
         List<String> lore = new ArrayList<>();
@@ -31,7 +32,12 @@ public class Ak47Events implements Listener {
 
     @EventHandler
     public void onClick(PlayerInteractEvent e){
-        
+    if(e.getAction().equals(Action.RIGHT_CLICK_BLOCK) || e.getAction().equals(Action.RIGHT_CLICK_AIR)){
+        if(e.getPlayer().getItemInHand().isSimilar(Ak47)){
+            e.setCancelled(true);
+
+        }
+    }
     }
 
 }
