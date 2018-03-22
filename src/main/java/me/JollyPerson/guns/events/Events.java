@@ -3,6 +3,7 @@ package me.JollyPerson.guns.events;
 import me.JollyPerson.guns.BlockPhysics;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.entity.Blaze;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Snowball;
 import org.bukkit.entity.TNTPrimed;
@@ -52,10 +53,11 @@ public class Events implements Listener{
     @EventHandler
     public void onFire(PlayerInteractEvent event) {
         if(event.getAction().equals(Action.RIGHT_CLICK_AIR) || event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
-            if (event.getPlayer().getItemInHand().isSimilar(new ItemStack(Material.SNOW_BALL))) {
-                Snowball snowball = event.getPlayer().launchProjectile(Snowball.class);
-                snowball.setVelocity(new Vector(1,1,1));
+            if (event.getPlayer().getItemInHand().isSimilar(new ItemStack(Material.DIAMOND))) {
+                Snowball snowball = event.getPlayer().launchProjectile(Snowball.class, event.getPlayer().getEyeLocation().getDirection());
+                snowball.setVelocity(event.getPlayer().getEyeLocation().getDirection().multiply(5));
                 bullets.add(snowball.getUniqueId());
+                snowball.setGravity(false);
                 System.out.println(bullets);
                 snowball.getUniqueId();
             }
@@ -76,6 +78,7 @@ public class Events implements Listener{
                 player.sendMessage("you are in the list");
                 e.getEntity().getWorld().createExplosion(e.getEntity().getLocation(), 3);
                 player.sendMessage(e.getEntity().getUniqueId().toString());
+                player.sendMessage(e.getEntity().getVelocity().toString());
                 bullets.remove(e.getEntity().getUniqueId());
             }
         }

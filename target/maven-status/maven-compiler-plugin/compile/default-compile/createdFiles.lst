@@ -1,4 +1,5 @@
-me\JollyPerson\grenades\BlockPhysics.class
-me\JollyPerson\grenades\events\Events.class
-me\JollyPerson\grenades\GrenadesMain.class
-me\JollyPerson\grenades\events\Events$Actions.class
+me\JollyPerson\guns\GunsMain.class
+me\JollyPerson\guns\projectile\ProjectileSource.class
+me\JollyPerson\guns\events\Events$Actions.class
+me\JollyPerson\guns\BlockPhysics.class
+me\JollyPerson\guns\events\Events.class

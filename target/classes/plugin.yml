@@ -1,5 +1,5 @@
 name: Grenades
-main: me.JollyPerson.grenades.GrenadesMain
+main: me.JollyPerson.guns.GunsMain
 version: 1.0
 author: JollyPerson
 commands:
