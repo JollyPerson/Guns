@@ -14,10 +14,6 @@ public class GunsMain extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        GunHandler handler = new GunHandler();
-        handler.setAmmoItem(new ItemStack(Material.FLINT));
-        handler.setMaxAmmo(1);
-
         this.getServer().getConsoleSender().sendMessage(ChatColor.GREEN + "Plugin Enabled");
         getServer().getPluginManager().registerEvents(new Events(new BlockPhysics()), this);
         getServer().getPluginManager().registerEvents(new Gun(), this);
