@@ -1,11 +1,9 @@
-C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\events\M4A4Events.java
-C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\Gun.java
 C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\BlockPhysics.java
-C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\events\AWPEvents.java
-C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\events\ScarHEvents.java
-C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\events\DEagleEvents.java
-C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\events\RevolverEvents.java
+C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\gun\GunType.java
+C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\gun\Ak47.java
+C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\gun\Gun.java
 C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\projectile\ProjectileSource.java
+C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\gun\GunHandler.java
 C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\events\Events.java
-C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\events\Ak47Events.java
+C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\commands\CreateGunCommand.java
 C:\Users\HarkB\Desktop\Minecraft Development\PublicPlugins\Guns\src\main\java\me\JollyPerson\guns\GunsMain.java

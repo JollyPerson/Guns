@@ -1,15 +1,22 @@
 package me.JollyPerson.guns.gun;
 
+import me.JollyPerson.guns.config.ConfigManager;
+import org.bukkit.craftbukkit.libs.it.unimi.dsi.fastutil.Hash;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.scheduler.BukkitRunnable;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 public class Gun implements Listener{
@@ -34,84 +41,21 @@ public class Gun implements Listener{
     private Entity bulletEntity;
     private int spreadAmount;
     private int explosionPower;
+    private GunType gunType;
+    private int currentAmmo;
+
+    private ConfigManager cfgm;
 
     public HashMap<UUID, String> getBullets() {
         return bullets;
     }
 
-    public String getIdentifier() {
-        return identifier;
+    public int getAmmo(){
+        return currentAmmo;
     }
 
-    public String getGunName() {
-        return gunName;
-    }
 
-    public int getMaxAmmo() {
-        return maxAmmo;
-    }
-
-    public String getReloadSound() {
-        return reloadSound;
-    }
-
-    public String getFireSound() {
-        return fireSound;
-    }
-
-    public String getHitSound() {
-        return hitSound;
-    }
-
-    public boolean isHitPing() {
-        return hitPing;
-    }
-
-    public String getHitPingSound() {
-        return hitPingSound;
-    }
-
-    public ItemStack getGunItem() {
-        return gunItem;
-    }
-
-    public ItemStack getAmmoItem() {
-        return ammoItem;
-    }
-
-    public Action getShootAction() {
-        return shootAction;
-    }
-
-    public Action getReloadAction() {
-        return reloadAction;
-    }
-
-    public Integer getPlayerDamage() {
-        return playerDamage;
-    }
-
-    public Boolean getScoped() {
-        return scoped;
-    }
-
-    public Double getKnockback() {
-        return knockback;
-    }
-
-    public Entity getBulletEntity() {
-        return bulletEntity;
-    }
-
-    public int getSpreadAmount() {
-        return spreadAmount;
-    }
-
-    public int getExplosionPower() {
-        return explosionPower;
-    }
-
-    public Gun(String identifier, String gunName, int maxAmmo, String reloadSound, String fireSound, String hitSound, boolean hitPing, String hitPingSound, ItemStack gunItem, ItemStack ammoItem, Action shootAction, Action reloadAction, Integer playerDamage, Boolean scoped, Double knockback, Entity bulletEntity, int spreadAmount, int explosionPower) {
+    public Gun(String identifier, String gunName, int maxAmmo, String reloadSound, String fireSound, String hitSound, boolean hitPing, String hitPingSound, ItemStack gunItem, ItemStack ammoItem, Action shootAction, Action reloadAction, Integer playerDamage, Boolean scoped, Double knockback, Entity bulletEntity, int spreadAmount, int explosionPower, GunType gunType) {
         this.identifier = identifier;
         this.gunName = gunName;
         this.maxAmmo = maxAmmo;
@@ -130,11 +74,15 @@ public class Gun implements Listener{
         this.bulletEntity = bulletEntity;
         this.spreadAmount = spreadAmount;
         this.explosionPower = explosionPower;
+        this.gunType = gunType;
     }
 
     public Gun(){
     }
 
+    public Gun(ConfigManager configManager){
+
+    }
 
     public String toString() {
         return "Gun{" +
@@ -157,6 +105,7 @@ public class Gun implements Listener{
                 ", bulletEntity=" + bulletEntity +
                 ", spreadAmount=" + spreadAmount +
                 ", explosionPower=" + explosionPower +
+                ", gunType=" + gunType +
                 '}';
     }
 

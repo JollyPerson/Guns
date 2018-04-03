@@ -1,6 +1,10 @@
 package me.JollyPerson.guns.gun;
 
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+
 public class Ak47 {
 
-    public Gun ak47 = new GunHandler().setKnocback(1D).setMaxAmmo(10).setMaxAmmo(9).buildGun();
+
+    public Gun ak47 = new GunHandler().setAmmoItem(new ItemStack(Material.FLINT)).buildGun();
 }

@@ -23,7 +23,17 @@ public class GunHandler {
     private Double knockback;
     private Entity bulletEntity;
     private int spreadAmount;
-    public int explosionPower;
+    private int explosionPower;
+    private GunType gunType;
+
+    public GunType getGunType() {
+        return gunType;
+    }
+
+    public GunHandler setGunType(GunType gunType) {
+        this.gunType = gunType;
+        return this;
+    }
 
     public GunHandler() {
     }
@@ -191,6 +201,6 @@ public class GunHandler {
     }
 
     public Gun buildGun() {
-        return new Gun(identifier, gunName, maxAmmo, reloadSound, fireSound, hitSound, hitPing, hitPingSound, gunItem, ammoItem, shootAction, reloadAction, playerDamage, scoped, knockback, bulletEntity, spreadAmount, explosionPower);
+        return new Gun(identifier, gunName, maxAmmo, reloadSound, fireSound, hitSound, hitPing, hitPingSound, gunItem, ammoItem, shootAction, reloadAction, playerDamage, scoped, knockback, bulletEntity, spreadAmount, explosionPower, gunType);
     }
 }
